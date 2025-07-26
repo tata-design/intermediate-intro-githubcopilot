@@ -128,7 +128,7 @@ with st.form("appointment_form"):
         name = st.text_input("Your Name")
         email = st.text_input("Email Address")
         date = st.date_input("Preferred Date")
-        time = st.time_input("Preferred Time", format="%I:%M %p")
+        time = st.time_input("Preferred Time")
         reason = st.text_area("Reason for Visit")
         submit_appointment = st.form_submit_button("Book Appointment")
         st.markdown("</div>", unsafe_allow_html=True)
