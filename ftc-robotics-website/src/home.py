@@ -783,7 +783,10 @@ def render_app():
             <div style='padding: 1rem 0;'>
                 <h4 style='color: #1D63A8; margin-bottom: 1.5rem; font-size: 1.2rem; font-weight: 600;'>Contact Us</h4>
                 <div style='display: flex; flex-direction: column; gap: 0.8rem; margin-bottom: 1.5rem;'>
-                    <p style='color: #1D63A8; margin: 0; font-size: 1rem;'>📧 BotBuildersHub.com@gmail.com</p>
+                    <div style='display: flex; align-items: center; gap: 0.3rem;'>
+                        <span style='color: #1D63A8; font-size: 1rem;'>📧</span>
+                        <p style='color: #1D63A8; margin: 0; font-size: 0.95rem; word-break: break-word; line-height: 1.3;'>BotBuildersHub.com@gmail.com</p>
+                    </div>
                     <p style='color: #1D63A8; margin: 0; font-size: 1rem;'>💬 Discord: BotBuilders Community</p>
                 </div>
                 <p style='color: #1D63A8; font-size: 0.9rem; font-style: italic;'>
