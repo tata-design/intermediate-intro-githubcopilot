@@ -441,10 +441,10 @@ def render_app():
                        box-shadow: 0 2px 8px rgba(255, 131, 16, 0.1);'>
             <div style='font-size: 1.1rem; margin-bottom: 1rem;'><strong>New to FTC Robotics?</strong> Here's how to get started:</div>
             <ol style='margin: 0; padding-left: 1.5rem; font-size: 1rem; line-height: 1.6;'>
-                <li style='margin-bottom: 0.5rem;'><strong>Start with CAD Tutorial</strong> - Learn to design robot parts</li>
-                <li style='margin-bottom: 0.5rem;'><strong>Watch Building Videos</strong> - Understand mechanical assembly</li>
-                <li style='margin-bottom: 0.5rem;'><strong>Explore Coding Basics</strong> - Program your first robot movements</li>
-                <li style='margin-bottom: 0.5rem;'><strong>Review Rules & Scoring</strong> - Master competition requirements</li>
+                <li style='margin-bottom: 0.5rem;'><strong>Start Building</strong> - Learn mechanical assembly and understand robot components</li>
+                <li style='margin-bottom: 0.5rem;'><strong>Program Your Robot</strong> - Master coding basics and control systems</li>
+                <li style='margin-bottom: 0.5rem;'><strong>Design Improvements with CAD</strong> - Create custom parts and optimize your robot</li>
+                <li style='margin-bottom: 0.5rem;'><strong>Review Rules & Scoring</strong> - Master competition requirements and strategies</li>
             </ol>
             </div>
             """,
