@@ -137,7 +137,7 @@ def setup_ui():
             margin: 0 !important;
             font-size: 0.95rem !important;
             font-weight: 400 !important;
-            color: #666 !important;
+            color: white !important;
             transition: all 0.2s ease !important;
             cursor: pointer !important;
             box-shadow: none !important;
@@ -153,7 +153,7 @@ def setup_ui():
         /* Radio button labels hover effect */
         .stRadio > div > label:hover {
             background: transparent !important;
-            color: #333 !important;
+            color: #f0f0f0 !important;
             transform: none !important;
             box-shadow: none !important;
             border-radius: 0 !important;
@@ -162,7 +162,7 @@ def setup_ui():
         /* Selected radio button - simple underline style */
         .stRadio > div > label[data-checked="true"] {
             background: transparent !important;
-            color: #1D63A8 !important;
+            color: white !important;
             border: none !important;
             box-shadow: none !important;
             border-radius: 0 !important;
@@ -179,13 +179,13 @@ def setup_ui():
             left: 0;
             width: 100%;
             height: 2px;
-            background: #1D63A8;
+            background: white;
         }
         
         /* Sidebar navigation title styling */
         .css-1d391kg .css-10trblm,
         .css-1d391kg h3 {
-            color: #333 !important;
+            color: white !important;
             font-weight: 700 !important;
             font-size: 1.3em !important;
             margin-bottom: 1.5rem !important;
@@ -350,7 +350,7 @@ def render_app():
         st.markdown(
             """
             <div style='margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid #e0e0e0;'>
-                <h3 style='color: #333; font-weight: 700; font-size: 1.3rem; margin: 0; text-align: left;'>
+                <h3 style='color: white; font-weight: 700; font-size: 1.3rem; margin: 0; text-align: left;'>
                     BotBuilders Hub
                 </h3>
             </div>
