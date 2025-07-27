@@ -88,11 +88,11 @@ def setup_ui():
             box-shadow: 0 4px 16px rgba(0,95,153,0.2);
         }
         
-        /* Modern sidebar styling */
+        /* Modern sidebar styling - clean white background like Robocorp */
         .css-1d391kg {
-            background: linear-gradient(180deg, #1D63A8 0%, #0f4d8c 100%);
-            border-right: 3px solid #FF8310;
-            box-shadow: 2px 0 15px rgba(29, 99, 168, 0.2);
+            background: white !important;
+            border-right: 1px solid #e0e0e0;
+            box-shadow: none;
         }
         
         /* Sidebar content styling */
@@ -108,7 +108,7 @@ def setup_ui():
         
         /* Radio button container */
         .stRadio > div {
-            gap: 0.5rem;
+            gap: 0.2rem;
             display: flex;
             flex-direction: column;
         }
@@ -128,79 +128,57 @@ def setup_ui():
             box-shadow: 0 2px 8px rgba(255, 131, 16, 0.2);
         }
         
-        /* Radio button labels - clean design */
+        /* Radio button labels - clean Robocorp-style design */
         .stRadio > div > label {
-            background: rgba(255, 255, 255, 0.95);
-            border: 1px solid rgba(255, 131, 16, 0.3);
-            border-radius: 20px;
-            padding: 0.8rem 1.5rem;
-            margin: 0.3rem 0;
-            font-size: 1rem !important;
-            font-weight: 500;
-            color: #1D63A8 !important;
-            transition: all 0.25s ease;
-            cursor: pointer;
-            box-shadow: 0 2px 6px rgba(255, 131, 16, 0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 45px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
+            background: white !important;
+            border: none !important;
+            border-radius: 6px !important;
+            padding: 0.7rem 1rem !important;
+            margin: 0.1rem 0 !important;
+            font-size: 0.95rem !important;
+            font-weight: 500 !important;
+            color: #666 !important;
+            transition: all 0.2s ease !important;
+            cursor: pointer !important;
+            box-shadow: none !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: flex-start !important;
+            min-height: 40px !important;
+            text-align: left !important;
+            position: relative !important;
+            overflow: hidden !important;
         }
         
         /* Radio button labels hover effect */
         .stRadio > div > label:hover {
-            background: linear-gradient(135deg, #FF8310 0%, #e6750e 100%);
-            color: white !important;
-            border-color: rgba(29, 99, 168, 0.3);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(255, 131, 16, 0.3);
-            border-radius: 22px;
+            background: #f5f5f5 !important;
+            color: #333 !important;
+            transform: none !important;
+            box-shadow: none !important;
+            border-radius: 6px !important;
         }
         
-        /* Selected radio button */
+        /* Selected radio button - Robocorp style */
         .stRadio > div > label[data-checked="true"] {
-            background: linear-gradient(135deg, #1D63A8 0%, #0f4d8c 100%) !important;
+            background: #1D63A8 !important;
             color: white !important;
-            border-color: #FF8310;
-            box-shadow: 0 4px 12px rgba(29, 99, 168, 0.3);
-            border-radius: 22px;
-            transform: translateY(-1px);
+            border: none !important;
+            box-shadow: none !important;
+            border-radius: 6px !important;
+            transform: none !important;
+            font-weight: 600 !important;
         }
         
         /* Sidebar navigation title styling */
         .css-1d391kg .css-10trblm,
         .css-1d391kg h3 {
-            color: #FF8310 !important;
-            font-weight: 600 !important;
-            font-size: 1.1em !important;
+            color: #333 !important;
+            font-weight: 700 !important;
+            font-size: 1.3em !important;
             margin-bottom: 1.5rem !important;
-            text-shadow: 0 1px 3px rgba(0,0,0,0.3);
-            text-align: center;
-        }
-        
-        /* Radio button labels - clean design */
-        .stRadio > div > label {
-            background: rgba(255, 255, 255, 0.15);
-            border: 1px solid rgba(255, 131, 16, 0.4);
-            border-radius: 20px;
-            padding: 0.8rem 1.5rem;
-            margin: 0.3rem 0;
-            font-size: 1rem !important;
-            font-weight: 500;
-            color: #FF8310 !important;
-            transition: all 0.25s ease;
-            cursor: pointer;
-            box-shadow: 0 2px 6px rgba(255, 131, 16, 0.15);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 45px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
+            text-shadow: none !important;
+            text-align: left !important;
         }
         
         /* Main content area - bigger text */
@@ -331,7 +309,7 @@ def render_app():
         unsafe_allow_html=True
     )
 
-    # Add logo to sidebar
+    # Add logo and title to sidebar
     with st.sidebar:
         # BotBuilders Hub Logo
         try:
@@ -356,15 +334,25 @@ def render_app():
                 unsafe_allow_html=True
             )
         
-        st.markdown("<br>", unsafe_allow_html=True)
+        # Add title similar to Robocorp
+        st.markdown(
+            """
+            <div style='margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid #e0e0e0;'>
+                <h3 style='color: #333; font-weight: 700; font-size: 1.3rem; margin: 0; text-align: left;'>
+                    BotBuilders Hub
+                </h3>
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
 
     # Sidebar navigation
     section = st.sidebar.radio(
         "",
-        ("Home", "Coding Tutorial", "CAD Tutorial", "Building Tutorial", "Rules", "Points System")
+        ("🏠 Home", "💻 Coding Tutorial", "📐 CAD Tutorial", "🔨 Building Tutorial", "📋 Rules", "🏆 Points System")
     )
 
-    if section == "Home":
+    if section == "🏠 Home":
         st.header("🎉 Welcome to BotBuilders Hub!")
         
         # Hero section with welcoming message
@@ -517,11 +505,11 @@ def render_app():
             """,
             unsafe_allow_html=True
         )
-    elif section == "Coding Tutorial":
+    elif section == "💻 Coding Tutorial":
         # Import and show the comprehensive coding tutorial
         from tutorials.coding import show_coding_tutorial
         show_coding_tutorial()
-    elif section == "CAD Tutorial":
+    elif section == "📐 CAD Tutorial":
         st.header("CAD Tutorial for FTC Robotics")
         
         st.markdown(
@@ -581,7 +569,7 @@ def render_app():
             Explore these resources to enhance your CAD skills and improve your robot designs!
             """
         )
-    elif section == "Building Tutorial":
+    elif section == "🔨 Building Tutorial":
         st.header("Building Your FTC Robot")
         
         st.markdown(
@@ -635,11 +623,11 @@ def render_app():
             - Ensure that the center of gravity is low to prevent tipping.
             """
         )
-    elif section == "Rules":
+    elif section == "📋 Rules":
         # Import and show the comprehensive rules guide
         from rules import show_rules
         show_rules()
-    elif section == "Points System":
+    elif section == "🏆 Points System":
         st.header("Points System")
         st.markdown("Learn how the points system works in FTC Robotics competitions. (Add your content here!)")
 
