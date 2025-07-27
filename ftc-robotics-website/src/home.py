@@ -748,25 +748,25 @@ def render_app():
                         <div style='background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d); width: 20px; height: 20px; border-radius: 4px; display: flex; align-items: center; justify-content: center;'>
                             <span style='color: white; font-size: 12px; font-weight: bold;'>IG</span>
                         </div>
-                        <p style='color: #ffffff; margin: 0; font-size: 1rem;'>Instagram</p>
+                        <p style='color: #1D63A8; margin: 0; font-size: 1rem; font-weight: 500;'>Instagram</p>
                     </div>
                     <div style='display: flex; align-items: center; gap: 0.5rem;'>
                         <div style='background: #1877f2; width: 20px; height: 20px; border-radius: 4px; display: flex; align-items: center; justify-content: center;'>
                             <span style='color: white; font-size: 12px; font-weight: bold;'>f</span>
                         </div>
-                        <p style='color: #ffffff; margin: 0; font-size: 1rem;'>Facebook</p>
+                        <p style='color: #1D63A8; margin: 0; font-size: 1rem; font-weight: 500;'>Facebook</p>
                     </div>
                     <div style='display: flex; align-items: center; gap: 0.5rem;'>
                         <div style='background: #1da1f2; width: 20px; height: 20px; border-radius: 10px; display: flex; align-items: center; justify-content: center;'>
                             <span style='color: white; font-size: 10px; font-weight: bold;'>𝕏</span>
                         </div>
-                        <p style='color: #ffffff; margin: 0; font-size: 1rem;'>Twitter</p>
+                        <p style='color: #1D63A8; margin: 0; font-size: 1rem; font-weight: 500;'>Twitter</p>
                     </div>
                     <div style='display: flex; align-items: center; gap: 0.5rem;'>
                         <div style='background: #ff0000; width: 20px; height: 20px; border-radius: 4px; display: flex; align-items: center; justify-content: center;'>
                             <span style='color: white; font-size: 8px; font-weight: bold;'>▶</span>
                         </div>
-                        <p style='color: #ffffff; margin: 0; font-size: 1rem;'>YouTube</p>
+                        <p style='color: #1D63A8; margin: 0; font-size: 1rem; font-weight: 500;'>YouTube</p>
                     </div>
                 </div>
                 <p style='color: #bdc3c7; font-size: 0.9rem; font-style: italic;'>
