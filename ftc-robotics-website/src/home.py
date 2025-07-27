@@ -769,7 +769,7 @@ def render_app():
                         <p style='color: #1D63A8; margin: 0; font-size: 1rem; font-weight: 500;'>YouTube</p>
                     </div>
                 </div>
-                <p style='color: #bdc3c7; font-size: 0.9rem; font-style: italic;'>
+                <p style='color: #1D63A8; font-size: 0.9rem; font-style: italic;'>
                     Join our community of young robotics enthusiasts!
                 </p>
             </div>
@@ -783,10 +783,10 @@ def render_app():
             <div style='padding: 1rem 0;'>
                 <h4 style='color: #1D63A8; margin-bottom: 1.5rem; font-size: 1.2rem; font-weight: 600;'>Contact Us</h4>
                 <div style='display: flex; flex-direction: column; gap: 0.8rem; margin-bottom: 1.5rem;'>
-                    <p style='color: #ffffff; margin: 0; font-size: 1rem;'>📧 hello@botbuildershub.com</p>
-                    <p style='color: #ffffff; margin: 0; font-size: 1rem;'>💬 Discord: BotBuilders Community</p>
+                    <p style='color: #1D63A8; margin: 0; font-size: 1rem;'>📧 BotBuildersHub.com@gmail.com</p>
+                    <p style='color: #1D63A8; margin: 0; font-size: 1rem;'>💬 Discord: BotBuilders Community</p>
                 </div>
-                <p style='color: #bdc3c7; font-size: 0.9rem; font-style: italic;'>
+                <p style='color: #1D63A8; font-size: 0.9rem; font-style: italic;'>
                     Questions? We're here to help!
                 </p>
             </div>
@@ -799,13 +799,13 @@ def render_app():
         """
         <hr style='border: none; border-top: 1px solid #4a5568; margin: 2rem 0 1.5rem 0;'>
         <div style='display: flex; justify-content: space-between; align-items: center; padding: 0 1rem;'>
-            <p style='color: #bdc3c7; font-size: 0.9rem; margin: 0;'>
+            <p style='color: #1D63A8; font-size: 0.9rem; margin: 0;'>
                 © 2025 BotBuilders Hub. FTC Robotics Learning Platform. All Rights Reserved
             </p>
             <div>
-                <span style='color: #bdc3c7; font-size: 0.9rem;'>Privacy Policy</span>
-                <span style='color: #4a5568; margin: 0 0.5rem;'>|</span>
-                <span style='color: #bdc3c7; font-size: 0.9rem;'>Terms and Conditions</span>
+                <span style='color: #1D63A8; font-size: 0.9rem;'>Privacy Policy</span>
+                <span style='color: #1D63A8; margin: 0 0.5rem;'>|</span>
+                <span style='color: #1D63A8; font-size: 0.9rem;'>Terms and Conditions</span>
             </div>
         </div>
         </div>
