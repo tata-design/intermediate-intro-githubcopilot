@@ -51,25 +51,28 @@ def setup_ui():
             justify-content: center;
             align-items: center;
             gap: 36px;
-            background: linear-gradient(90deg, #005f99 0%, #0077cc 100%);
+            background: linear-gradient(90deg, #1a1a2e 0%, #16213e 100%);
             padding: 18px 0 10px 0;
             border-radius: 0 0 18px 18px;
             margin-bottom: 32px;
-            box-shadow: 0 2px 12px rgba(0,95,153,0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            border-bottom: 3px solid #FF8310;
         }
         .nav-link {
-            color: #fff !important;
+            color: #e1e5f2 !important;
             font-size: 1.1em;
             font-weight: 600;
             text-decoration: none;
             padding: 6px 18px;
             border-radius: 8px;
             transition: background 0.2s, color 0.2s;
+            letter-spacing: 0.5px;
         }
         .nav-link:hover {
-            background: #e6f9ff;
-            color: #005f99 !important;
+            background: rgba(255, 131, 16, 0.2);
+            color: #ffffff !important;
             text-decoration: none;
+            box-shadow: 0 2px 8px rgba(255, 131, 16, 0.3);
         }
         .stButton > button {
             background: linear-gradient(90deg, #005f99 0%, #0077cc 100%);
@@ -88,22 +91,36 @@ def setup_ui():
             box-shadow: 0 4px 16px rgba(0,95,153,0.2);
         }
         
-        /* Modern sidebar styling - white background with orange outline */
+        /* Modern techy sidebar styling - dark professional theme */
         .css-1d391kg, [data-testid="stSidebar"], .css-1lcbmhc, .stSidebar {
-            background: white !important;
+            background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%) !important;
             border-right: 3px solid #FF8310 !important;
-            box-shadow: none !important;
+            box-shadow: 4px 0 20px rgba(0, 0, 0, 0.15) !important;
+            backdrop-filter: blur(10px) !important;
         }
         
         /* Additional sidebar container targeting */
         [data-testid="stSidebar"] > div {
-            background: white !important;
+            background: transparent !important;
         }
         
         /* Sidebar content styling */
         .css-17eq0hr {
             background: transparent !important;
             padding: 1.5rem 1rem;
+        }
+        
+        /* Glassmorphism effect for sidebar */
+        [data-testid="stSidebar"]::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(29, 99, 168, 0.1) 0%, rgba(255, 131, 16, 0.05) 100%);
+            backdrop-filter: blur(10px);
+            z-index: -1;
         }
         
         /* Hide radio button circles but keep functionality */
@@ -150,17 +167,17 @@ def setup_ui():
             box-shadow: 0 2px 8px rgba(255, 131, 16, 0.2);
         }
         
-        /* Radio button labels - clean text-based design */
+        /* Radio button labels - modern techy text-based design */
         .stRadio > div > label {
             background: transparent !important;
             border: none !important;
-            border-radius: 0 !important;
-            padding: 0.5rem 0 !important;
-            margin: 0 !important;
+            border-radius: 8px !important;
+            padding: 0.75rem 1rem !important;
+            margin: 0.2rem 0 !important;
             font-size: 0.95rem !important;
-            font-weight: 400 !important;
-            color: #1D63A8 !important;
-            transition: all 0.2s ease !important;
+            font-weight: 500 !important;
+            color: #e1e5f2 !important;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
             cursor: pointer !important;
             box-shadow: none !important;
             display: flex !important;
@@ -171,38 +188,44 @@ def setup_ui():
             position: relative !important;
             overflow: visible !important;
             pointer-events: auto !important;
+            letter-spacing: 0.5px !important;
         }
         
-        /* Radio button labels hover effect */
+        /* Radio button labels hover effect - techy glow */
         .stRadio > div > label:hover {
-            background: transparent !important;
-            color: #0f4d8c !important;
-            transform: none !important;
-            box-shadow: none !important;
-            border-radius: 0 !important;
+            background: rgba(29, 99, 168, 0.15) !important;
+            color: #ffffff !important;
+            transform: translateX(4px) !important;
+            box-shadow: 0 4px 12px rgba(29, 99, 168, 0.3) !important;
+            border-radius: 8px !important;
+            border-left: 3px solid #1D63A8 !important;
         }
         
-        /* Selected radio button - simple underline style */
+        /* Selected radio button - modern active state */
         .stRadio > div > label[data-checked="true"] {
-            background: transparent !important;
-            color: #1D63A8 !important;
-            border: none !important;
-            box-shadow: none !important;
-            border-radius: 0 !important;
-            transform: none !important;
+            background: linear-gradient(90deg, rgba(255, 131, 16, 0.2) 0%, rgba(29, 99, 168, 0.15) 100%) !important;
+            color: #ffffff !important;
+            border: 1px solid rgba(255, 131, 16, 0.4) !important;
+            box-shadow: 0 4px 16px rgba(255, 131, 16, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+            border-radius: 8px !important;
+            transform: translateX(4px) !important;
             font-weight: 600 !important;
             position: relative !important;
         }
         
-        /* Add underline to selected item */
-        .stRadio > div > label[data-checked="true"]:after {
-            content: '';
+        /* Add modern indicator to selected item */
+        .stRadio > div > label[data-checked="true"]:before {
+            content: '▶';
             position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: #FF8310;
+            left: 0.5rem;
+            color: #FF8310;
+            font-size: 0.8rem;
+            transform: scale(0.8);
+        }
+        
+        /* Adjust text position for selected items */
+        .stRadio > div > label[data-checked="true"] > div:last-child {
+            margin-left: 1rem !important;
         }
         
         /* Ensure radio button input is clickable but hidden */
@@ -217,17 +240,21 @@ def setup_ui():
             left: 0 !important;
         }
         
-        /* Sidebar navigation title styling */
+        /* Sidebar navigation title styling - modern tech header */
         .css-1d391kg .css-10trblm,
         .css-1d391kg h3,
         [data-testid="stSidebar"] .css-10trblm,
         [data-testid="stSidebar"] h3 {
-            color: #1D63A8 !important;
+            color: #ffffff !important;
             font-weight: 700 !important;
-            font-size: 1.3em !important;
-            margin-bottom: 1.5rem !important;
-            text-shadow: none !important;
+            font-size: 1.4em !important;
+            margin-bottom: 2rem !important;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
             text-align: left !important;
+            background: linear-gradient(90deg, #FF8310 0%, #ffffff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
         
         /* Main content area - bigger text */
@@ -274,7 +301,7 @@ def setup_ui():
             border-left-color: #004080 !important;
         }
         
-        /* Darker blue for any light blue elements */
+        /* Darker blue for any light blue elements - updated for dark theme */
         .css-1d391kg .css-10trblm,
         [data-testid="stSidebar"] .css-10trblm,
         [data-testid="stSidebar"] .element-container,
@@ -282,7 +309,28 @@ def setup_ui():
         [data-testid="stSidebar"] h2,
         [data-testid="stSidebar"] h3,
         [data-testid="stSidebar"] p {
-            color: #1D63A8 !important;
+            color: #e1e5f2 !important;
+        }
+        
+        /* Search section styling - modern tech design */
+        [data-testid="stSidebar"] .stTextInput > div > div > input {
+            background: rgba(29, 99, 168, 0.1) !important;
+            border: 1px solid rgba(255, 131, 16, 0.3) !important;
+            border-radius: 8px !important;
+            color: #ffffff !important;
+            padding: 0.75rem !important;
+            font-size: 0.9rem !important;
+            transition: all 0.3s ease !important;
+        }
+        
+        [data-testid="stSidebar"] .stTextInput > div > div > input:focus {
+            border-color: #FF8310 !important;
+            box-shadow: 0 0 0 2px rgba(255, 131, 16, 0.2) !important;
+            background: rgba(29, 99, 168, 0.15) !important;
+        }
+        
+        [data-testid="stSidebar"] .stTextInput > div > div > input::placeholder {
+            color: rgba(225, 229, 242, 0.6) !important;
         }
         </style>
         """,
@@ -387,13 +435,33 @@ def render_app():
                 unsafe_allow_html=True
             )
         
-        # Add title similar to Robocorp
+        # Add modern tech title to sidebar
         st.markdown(
             """
-            <div style='margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid #e0e0e0;'>
-                <h3 style='color: #1D63A8; font-weight: 700; font-size: 1.3rem; margin: 0; text-align: left;'>
-                    BotBuilders Hub
+            <div style='margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid rgba(255, 131, 16, 0.3);'>
+                <h3 style='
+                    background: linear-gradient(90deg, #FF8310 0%, #ffffff 100%);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    background-clip: text;
+                    font-weight: 700; 
+                    font-size: 1.4rem; 
+                    margin: 0; 
+                    text-align: left;
+                    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+                    letter-spacing: 1px;
+                '>
+                    🤖 BotBuilders Hub
                 </h3>
+                <div style='
+                    color: rgba(225, 229, 242, 0.8); 
+                    font-size: 0.85rem; 
+                    margin-top: 0.5rem;
+                    font-weight: 300;
+                    letter-spacing: 0.5px;
+                '>
+                    Advanced Robotics Platform
+                </div>
             </div>
             """,
             unsafe_allow_html=True
@@ -402,8 +470,64 @@ def render_app():
     # Sidebar navigation
     section = st.sidebar.radio(
         "",
-        ("🏠 Home", "💻 Coding Tutorial", "📐 CAD Tutorial", "🔨 Building Tutorial", "📋 Rules", "🏆 Points System")
+        ("🏠 Home", "💻 Coding Tutorial", "📐 CAD Tutorial", "🔨 Building Tutorial", "📋 Rules")
     )
+    
+    # Add modern search bar at the bottom of sidebar
+    st.sidebar.markdown("<br><br>", unsafe_allow_html=True)
+    st.sidebar.markdown(
+        """
+        <div style='
+            border-top: 1px solid rgba(255, 131, 16, 0.3); 
+            padding-top: 1.5rem; 
+            margin-top: 1rem;
+            background: rgba(29, 99, 168, 0.05);
+            padding: 1.5rem 1rem;
+            border-radius: 12px;
+            backdrop-filter: blur(5px);
+        '>
+            <h4 style='
+                color: #FF8310; 
+                font-size: 1rem; 
+                margin-bottom: 0.8rem; 
+                font-weight: 600;
+                text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+                letter-spacing: 0.5px;
+            '>🔍 Search Platform</h4>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+    
+    search_query = st.sidebar.text_input(
+        "",
+        placeholder="Search tutorials, rules, tips...",
+        key="sidebar_search",
+        help="Search through our content"
+    )
+    
+    if search_query:
+        st.sidebar.markdown(
+            f"""
+            <div style='
+                background: linear-gradient(135deg, rgba(29, 99, 168, 0.2) 0%, rgba(255, 131, 16, 0.1) 100%); 
+                padding: 1rem; 
+                border-radius: 8px; 
+                border-left: 3px solid #FF8310; 
+                margin-top: 0.5rem;
+                backdrop-filter: blur(10px);
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            '>
+                <p style='color: #FF8310; font-size: 0.9rem; margin: 0; font-weight: 600;'>
+                    🔍 Searching: <strong>"{search_query}"</strong>
+                </p>
+                <p style='color: rgba(225, 229, 242, 0.8); font-size: 0.75rem; margin: 0.5rem 0 0 0; font-style: italic;'>
+                    Navigate to sections above to find relevant content
+                </p>
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
 
     if section == "🏠 Home":
         st.header("🎉 Welcome to BotBuilders Hub!")
@@ -680,9 +804,6 @@ def render_app():
         # Import and show the comprehensive rules guide
         from rules import show_rules
         show_rules()
-    elif section == "🏆 Points System":
-        st.header("Points System")
-        st.markdown("Learn how the points system works in FTC Robotics competitions. (Add your content here!)")
 
     st.info("All tutorials and resources are free to access. Happy learning!")
 
@@ -763,7 +884,7 @@ def render_app():
                         <p style='color: #1D63A8; margin: 0; font-size: 1rem; font-weight: 500;'>Twitter</p>
                     </div>
                     <div style='display: flex; align-items: center; gap: 0.5rem;'>
-                        <div style='background: #ff0000; width: 20px; height: 20px; border-radius: 4px; display: flex; align-items: center; justify-content: center;'>
+                        <div style='background: can yo#ff0000; width: 20px; height: 20px; border-radius: 4px; display: flex; align-items: center; justify-content: center;'>
                             <span style='color: white; font-size: 8px; font-weight: bold;'>▶</span>
                         </div>
                         <p style='color: #1D63A8; margin: 0; font-size: 1rem; font-weight: 500;'>YouTube</p>
