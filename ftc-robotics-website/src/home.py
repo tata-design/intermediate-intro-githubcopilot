@@ -490,7 +490,7 @@ def render_app():
                 Practical projects and real-world applications<br><br>
                 
                 <strong style='color: #FF8310;'>🤝 Peer Powered Learning</strong><br>
-                We started BotBuilders Hub based on our own robotics journey—built by teens to help other teens learn, build, and grow in tech.<br><br>
+                We started BotBuilders Hub based on our own robotics journey—built by teens to help other teens learn, build, and grow in tech.<br>
                 
                 <strong style='color: #FF8310;'>🚀 Industry Tools</strong><br>
                 Work with professional software and techniques
