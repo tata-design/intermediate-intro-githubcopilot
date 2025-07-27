@@ -462,7 +462,7 @@ def render_app():
             st.markdown(
                 """
                 <div style='background: white; padding: 1.3rem; border-radius: 12px; border-left: 4px solid #1D63A8; 
-                           box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin-bottom: 1rem; min-height: 160px;
+                           box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin-bottom: 1rem; height: 220px;
                            display: flex; flex-direction: column; justify-content: flex-start;'>
                 <div style='font-size: 0.9rem; line-height: 1.5;'>
                 <strong style='color: #1D63A8;'>🎥 Interactive Video Tutorials</strong><br>
@@ -483,7 +483,7 @@ def render_app():
             st.markdown(
                 """
                 <div style='background: white; padding: 1.3rem; border-radius: 12px; border-left: 4px solid #FF8310; 
-                           box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin-bottom: 1rem; min-height: 160px;
+                           box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin-bottom: 1rem; height: 220px;
                            display: flex; flex-direction: column; justify-content: flex-start;'>
                 <div style='font-size: 0.9rem; line-height: 1.5;'>
                 <strong style='color: #FF8310;'>🔧 Hands-On Learning</strong><br>
