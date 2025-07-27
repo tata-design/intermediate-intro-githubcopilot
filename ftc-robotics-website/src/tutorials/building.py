@@ -15,6 +15,18 @@ st.markdown(
 )
 
 st.header("1. Understanding Robot Components")
+
+# Add an educational video
+st.subheader("📹 Building Tutorial Video")
+st.markdown(
+    """
+    Watch this comprehensive tutorial to get started with building your FTC robot:
+    """
+)
+
+# Embed the YouTube video
+st.video("https://www.youtube.com/watch?v=TmUSGWCiLlU")
+
 st.markdown(
     """
     Your robot will consist of various components, including:

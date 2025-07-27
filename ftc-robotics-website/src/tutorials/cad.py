@@ -15,12 +15,25 @@ st.markdown(
 )
 
 st.header("Getting Started with CAD")
+
+# Add an educational video
+st.subheader("📹 CAD Tutorial Video")
+st.markdown(
+    """
+    Watch this comprehensive tutorial to get started with CAD for FTC Robotics:
+    """
+)
+
+# Embed the YouTube video you provided
+st.video("https://www.youtube.com/watch?v=wS9xyiaxYZM&t=3s")
+
 st.markdown(
     """
     CAD software allows you to create precise drawings and models of your robot components. Here are some popular CAD tools used in FTC Robotics:
     - **Fusion 360**: A powerful CAD tool that is free for students and educators.
     - **Tinkercad**: A user-friendly, web-based CAD tool suitable for beginners.
     - **SolidWorks**: A professional-grade CAD software often used in engineering.
+    - **Onshape**: A cloud-based CAD platform that's free for public projects and offers real-time collaboration features.
 
     Choose a tool that fits your skill level and project requirements.
     """
