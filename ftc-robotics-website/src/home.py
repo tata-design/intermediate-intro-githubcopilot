@@ -219,7 +219,9 @@ def setup_ui():
         
         /* Sidebar navigation title styling */
         .css-1d391kg .css-10trblm,
-        .css-1d391kg h3 {
+        .css-1d391kg h3,
+        [data-testid="stSidebar"] .css-10trblm,
+        [data-testid="stSidebar"] h3 {
             color: #1D63A8 !important;
             font-weight: 700 !important;
             font-size: 1.3em !important;
@@ -273,8 +275,14 @@ def setup_ui():
         }
         
         /* Darker blue for any light blue elements */
-        .css-1d391kg .css-10trblm {
-            color: #004080 !important;
+        .css-1d391kg .css-10trblm,
+        [data-testid="stSidebar"] .css-10trblm,
+        [data-testid="stSidebar"] .element-container,
+        [data-testid="stSidebar"] h1,
+        [data-testid="stSidebar"] h2,
+        [data-testid="stSidebar"] h3,
+        [data-testid="stSidebar"] p {
+            color: #1D63A8 !important;
         }
         </style>
         """,
@@ -298,7 +306,7 @@ def render_app():
     st.markdown(
         """
         <div style='
-            background: linear-gradient(135deg, rgba(29, 99, 168, 0.05) 0%, rgba(255, 131, 16, 0.05) 100%);
+            background: white;
             padding: 2.5rem 2rem;
             margin: -1rem -2rem 3rem -2rem;
             border-radius: 0 0 25px 25px;
@@ -677,6 +685,113 @@ def render_app():
         st.markdown("Learn how the points system works in FTC Robotics competitions. (Add your content here!)")
 
     st.info("All tutorials and resources are free to access. Happy learning!")
+
+    # Professional Footer with better spacing
+    st.markdown("<br><br>", unsafe_allow_html=True)
+    
+    # Footer with styled background
+    st.markdown(
+        """
+        <div style='
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            padding: 3rem 2rem 2rem 2rem;
+            margin: 2rem -2rem -2rem -2rem;
+            border-radius: 15px 15px 0 0;
+            color: white;
+        '>
+        """,
+        unsafe_allow_html=True
+    )
+    
+    # Footer content with better spacing
+    col1, spacer1, col2, spacer2, col3, spacer3, col4 = st.columns([3, 0.5, 3, 0.5, 3, 0.5, 3])
+    
+    with col1:
+        st.markdown(
+            """
+            <div style='padding: 1rem 0;'>
+                <h3 style='color: #FF8310; margin-bottom: 1.5rem; font-size: 1.3rem; font-weight: 600;'>🤖 BotBuilders Hub</h3>
+                <p style='color: #ecf0f1; font-size: 1rem; line-height: 1.6; margin-bottom: 1rem;'>
+                    Empowering the next generation of robotics engineers through comprehensive FTC learning resources.
+                </p>
+                <p style='color: #bdc3c7; font-size: 0.9rem; font-style: italic;'>
+                    Built by students, for students.
+                </p>
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
+    
+    with col2:
+        st.markdown(
+            """
+            <div style='padding: 1rem 0;'>
+                <h4 style='color: #1D63A8; margin-bottom: 1.5rem; font-size: 1.2rem; font-weight: 600;'>Quick Links</h4>
+                <div style='display: flex; flex-direction: column; gap: 0.8rem;'>
+                    <p style='color: #ecf0f1; margin: 0; font-size: 1rem;'>• Tutorials</p>
+                    <p style='color: #ecf0f1; margin: 0; font-size: 1rem;'>• Competition Rules</p>
+                    <p style='color: #ecf0f1; margin: 0; font-size: 1rem;'>• Getting Started</p>
+                    <p style='color: #ecf0f1; margin: 0; font-size: 1rem;'>• Resources</p>
+                </div>
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
+    
+    with col3:
+        st.markdown(
+            """
+            <div style='padding: 1rem 0;'>
+                <h4 style='color: #1D63A8; margin-bottom: 1.5rem; font-size: 1.2rem; font-weight: 600;'>Follow Us</h4>
+                <div style='display: flex; flex-direction: column; gap: 0.8rem; margin-bottom: 1.5rem;'>
+                    <p style='color: #ecf0f1; margin: 0; font-size: 1rem;'>📷 Instagram</p>
+                    <p style='color: #ecf0f1; margin: 0; font-size: 1rem;'>📘 Facebook</p>
+                    <p style='color: #ecf0f1; margin: 0; font-size: 1rem;'>🐦 Twitter</p>
+                    <p style='color: #ecf0f1; margin: 0; font-size: 1rem;'>📺 YouTube</p>
+                </div>
+                <p style='color: #bdc3c7; font-size: 0.9rem; font-style: italic;'>
+                    Join our community of young robotics enthusiasts!
+                </p>
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
+    
+    with col4:
+        st.markdown(
+            """
+            <div style='padding: 1rem 0;'>
+                <h4 style='color: #1D63A8; margin-bottom: 1.5rem; font-size: 1.2rem; font-weight: 600;'>Contact Us</h4>
+                <div style='display: flex; flex-direction: column; gap: 0.8rem; margin-bottom: 1.5rem;'>
+                    <p style='color: #ecf0f1; margin: 0; font-size: 1rem;'>📧 hello@botbuildershub.com</p>
+                    <p style='color: #ecf0f1; margin: 0; font-size: 1rem;'>💬 Discord: BotBuilders Community</p>
+                </div>
+                <p style='color: #bdc3c7; font-size: 0.9rem; font-style: italic;'>
+                    Questions? We're here to help!
+                </p>
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
+    
+    # Footer bottom section
+    st.markdown(
+        """
+        <hr style='border: none; border-top: 1px solid #4a5568; margin: 2rem 0 1.5rem 0;'>
+        <div style='display: flex; justify-content: space-between; align-items: center; padding: 0 1rem;'>
+            <p style='color: #bdc3c7; font-size: 0.9rem; margin: 0;'>
+                © 2025 BotBuilders Hub. FTC Robotics Learning Platform. All Rights Reserved
+            </p>
+            <div>
+                <span style='color: #bdc3c7; font-size: 0.9rem;'>Privacy Policy</span>
+                <span style='color: #4a5568; margin: 0 0.5rem;'>|</span>
+                <span style='color: #bdc3c7; font-size: 0.9rem;'>Terms and Conditions</span>
+            </div>
+        </div>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
 
 # Main execution
 if __name__ == "__main__":
