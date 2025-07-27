@@ -89,15 +89,20 @@ def setup_ui():
         }
         
         /* Modern sidebar styling - white background with orange outline */
-        .css-1d391kg {
+        .css-1d391kg, [data-testid="stSidebar"], .css-1lcbmhc, .stSidebar {
             background: white !important;
-            border-right: 3px solid #FF8310;
-            box-shadow: none;
+            border-right: 3px solid #FF8310 !important;
+            box-shadow: none !important;
+        }
+        
+        /* Additional sidebar container targeting */
+        [data-testid="stSidebar"] > div {
+            background: white !important;
         }
         
         /* Sidebar content styling */
         .css-17eq0hr {
-            background: transparent;
+            background: transparent !important;
             padding: 1.5rem 1rem;
         }
         
