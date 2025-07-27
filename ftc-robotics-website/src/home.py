@@ -108,7 +108,7 @@ def setup_ui():
         
         /* Radio button container */
         .stRadio > div {
-            gap: 0.2rem;
+            gap: 0.8rem;
             display: flex;
             flex-direction: column;
         }
@@ -128,15 +128,15 @@ def setup_ui():
             box-shadow: 0 2px 8px rgba(255, 131, 16, 0.2);
         }
         
-        /* Radio button labels - clean Robocorp-style design */
+        /* Radio button labels - clean text-based design like Robocorp */
         .stRadio > div > label {
-            background: white !important;
+            background: transparent !important;
             border: none !important;
-            border-radius: 6px !important;
-            padding: 0.7rem 1rem !important;
-            margin: 0.1rem 0 !important;
+            border-radius: 0 !important;
+            padding: 0.5rem 0 !important;
+            margin: 0 !important;
             font-size: 0.95rem !important;
-            font-weight: 500 !important;
+            font-weight: 400 !important;
             color: #666 !important;
             transition: all 0.2s ease !important;
             cursor: pointer !important;
@@ -144,30 +144,42 @@ def setup_ui():
             display: flex !important;
             align-items: center !important;
             justify-content: flex-start !important;
-            min-height: 40px !important;
+            min-height: auto !important;
             text-align: left !important;
             position: relative !important;
-            overflow: hidden !important;
+            overflow: visible !important;
         }
         
         /* Radio button labels hover effect */
         .stRadio > div > label:hover {
-            background: #f5f5f5 !important;
+            background: transparent !important;
             color: #333 !important;
             transform: none !important;
             box-shadow: none !important;
-            border-radius: 6px !important;
+            border-radius: 0 !important;
         }
         
-        /* Selected radio button - Robocorp style */
+        /* Selected radio button - simple underline style */
         .stRadio > div > label[data-checked="true"] {
-            background: #1D63A8 !important;
-            color: white !important;
+            background: transparent !important;
+            color: #1D63A8 !important;
             border: none !important;
             box-shadow: none !important;
-            border-radius: 6px !important;
+            border-radius: 0 !important;
             transform: none !important;
             font-weight: 600 !important;
+            position: relative !important;
+        }
+        
+        /* Add underline to selected item */
+        .stRadio > div > label[data-checked="true"]:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: #1D63A8;
         }
         
         /* Sidebar navigation title styling */
