@@ -88,10 +88,10 @@ def setup_ui():
             box-shadow: 0 4px 16px rgba(0,95,153,0.2);
         }
         
-        /* Modern sidebar styling - clean white background like Robocorp */
+        /* Modern sidebar styling - white background with orange outline */
         .css-1d391kg {
             background: white !important;
-            border-right: 1px solid #e0e0e0;
+            border-right: 3px solid #FF8310;
             box-shadow: none;
         }
         
@@ -128,7 +128,7 @@ def setup_ui():
             box-shadow: 0 2px 8px rgba(255, 131, 16, 0.2);
         }
         
-        /* Radio button labels - clean text-based design like Robocorp */
+        /* Radio button labels - clean text-based design */
         .stRadio > div > label {
             background: transparent !important;
             border: none !important;
@@ -137,7 +137,7 @@ def setup_ui():
             margin: 0 !important;
             font-size: 0.95rem !important;
             font-weight: 400 !important;
-            color: white !important;
+            color: #1D63A8 !important;
             transition: all 0.2s ease !important;
             cursor: pointer !important;
             box-shadow: none !important;
@@ -153,7 +153,7 @@ def setup_ui():
         /* Radio button labels hover effect */
         .stRadio > div > label:hover {
             background: transparent !important;
-            color: #f0f0f0 !important;
+            color: #0f4d8c !important;
             transform: none !important;
             box-shadow: none !important;
             border-radius: 0 !important;
@@ -162,7 +162,7 @@ def setup_ui():
         /* Selected radio button - simple underline style */
         .stRadio > div > label[data-checked="true"] {
             background: transparent !important;
-            color: white !important;
+            color: #1D63A8 !important;
             border: none !important;
             box-shadow: none !important;
             border-radius: 0 !important;
@@ -179,13 +179,13 @@ def setup_ui():
             left: 0;
             width: 100%;
             height: 2px;
-            background: white;
+            background: #FF8310;
         }
         
         /* Sidebar navigation title styling */
         .css-1d391kg .css-10trblm,
         .css-1d391kg h3 {
-            color: white !important;
+            color: #1D63A8 !important;
             font-weight: 700 !important;
             font-size: 1.3em !important;
             margin-bottom: 1.5rem !important;
@@ -350,7 +350,7 @@ def render_app():
         st.markdown(
             """
             <div style='margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid #e0e0e0;'>
-                <h3 style='color: white; font-weight: 700; font-size: 1.3rem; margin: 0; text-align: left;'>
+                <h3 style='color: #1D63A8; font-weight: 700; font-size: 1.3rem; margin: 0; text-align: left;'>
                     BotBuilders Hub
                 </h3>
             </div>
