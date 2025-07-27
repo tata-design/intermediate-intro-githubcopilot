@@ -106,9 +106,26 @@ def setup_ui():
             padding: 1.5rem 1rem;
         }
         
-        /* Hide radio button circles for cleaner look */
+        /* Hide radio button circles but keep functionality */
         .stRadio > div > label > div:first-child {
             display: none !important;
+        }
+        
+        /* Ensure the entire label is clickable */
+        .stRadio > div > label {
+            position: relative !important;
+        }
+        
+        /* Create invisible clickable area over the entire label */
+        .stRadio > div > label::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+            z-index: 1;
         }
         
         /* Radio button container */
@@ -153,6 +170,7 @@ def setup_ui():
             text-align: left !important;
             position: relative !important;
             overflow: visible !important;
+            pointer-events: auto !important;
         }
         
         /* Radio button labels hover effect */
@@ -185,6 +203,18 @@ def setup_ui():
             width: 100%;
             height: 2px;
             background: #FF8310;
+        }
+        
+        /* Ensure radio button input is clickable but hidden */
+        .stRadio > div > label > div:first-child input[type="radio"] {
+            opacity: 0 !important;
+            position: absolute !important;
+            pointer-events: auto !important;
+            width: 100% !important;
+            height: 100% !important;
+            margin: 0 !important;
+            top: 0 !important;
+            left: 0 !important;
         }
         
         /* Sidebar navigation title styling */
@@ -251,13 +281,11 @@ def setup_ui():
         unsafe_allow_html=True
     )
 
-    # Website navigation header (visual only)
+    # Website header (no navigation links since sidebar handles navigation)
     st.markdown(
         """
         <div class='nav-header'>
-            <span class='nav-link'>Tutorials</span>
-            <span class='nav-link'>Rules</span>
-            <span class='nav-link'>Points System</span>
+            <span class='nav-link'>FTC Robotics Learning Platform</span>
         </div>
         """,
         unsafe_allow_html=True
