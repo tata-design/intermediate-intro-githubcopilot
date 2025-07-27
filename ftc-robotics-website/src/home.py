@@ -703,8 +703,8 @@ def render_app():
         unsafe_allow_html=True
     )
     
-    # Footer content with better spacing
-    col1, spacer1, col2, spacer2, col3, spacer3, col4 = st.columns([3, 0.5, 3, 0.5, 3, 0.5, 3])
+    # Footer content with better spacing - giving more space to the contact column
+    col1, spacer1, col2, spacer2, col3, spacer3, col4 = st.columns([2.5, 0.3, 2.5, 0.3, 2.5, 0.3, 3.5])
     
     with col1:
         st.markdown(
