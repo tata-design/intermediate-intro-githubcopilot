@@ -274,7 +274,15 @@ def render_app():
     # Modern, exciting title with gradients and effects
     st.markdown(
         """
-        <div style='text-align: center; margin-bottom: 2rem;'>
+        <div style='
+            background: linear-gradient(135deg, rgba(29, 99, 168, 0.05) 0%, rgba(255, 131, 16, 0.05) 100%);
+            padding: 2.5rem 2rem;
+            margin: -1rem -2rem 3rem -2rem;
+            border-radius: 0 0 25px 25px;
+            border-bottom: 1px solid rgba(29, 99, 168, 0.1);
+            box-shadow: 0 4px 20px rgba(29, 99, 168, 0.08);
+            text-align: center;
+        '>
             <h1 style='
                 background: linear-gradient(135deg, #1D63A8 0%, #FF8310 50%, #1D63A8 100%);
                 background-size: 200% 200%;
@@ -297,7 +305,7 @@ def render_app():
                 background-clip: text;
                 font-size: 1.8rem;
                 font-weight: 600;
-                margin-bottom: 1rem;
+                margin-bottom: 1.5rem;
                 letter-spacing: 1px;
             '>
                 FTC Robotics Tutorials & Learning Hub
