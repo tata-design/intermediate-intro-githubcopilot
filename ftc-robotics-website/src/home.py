@@ -270,7 +270,58 @@ def setup_ui():
 
 def render_app():
     """Main application rendering logic"""
-    st.title("🤖 FTC Robotics Tutorials & Learning Hub")
+    
+    # Modern, exciting title with gradients and effects
+    st.markdown(
+        """
+        <div style='text-align: center; margin-bottom: 2rem;'>
+            <h1 style='
+                background: linear-gradient(135deg, #1D63A8 0%, #FF8310 50%, #1D63A8 100%);
+                background-size: 200% 200%;
+                animation: gradient 3s ease infinite;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                font-size: 3.5rem !important;
+                font-weight: 800 !important;
+                margin-bottom: 0.5rem !important;
+                text-shadow: 0 4px 8px rgba(29, 99, 168, 0.3);
+                letter-spacing: 2px;
+            '>
+                🤖 BotBuilders Hub
+            </h1>
+            <div style='
+                background: linear-gradient(90deg, #FF8310 0%, #1D63A8 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                font-size: 1.8rem;
+                font-weight: 600;
+                margin-bottom: 1rem;
+                letter-spacing: 1px;
+            '>
+                FTC Robotics Tutorials & Learning Hub
+            </div>
+            <div style='
+                width: 120px;
+                height: 4px;
+                background: linear-gradient(90deg, #1D63A8 0%, #FF8310 50%, #1D63A8 100%);
+                margin: 0 auto;
+                border-radius: 2px;
+                box-shadow: 0 2px 8px rgba(255, 131, 16, 0.4);
+            '></div>
+        </div>
+        
+        <style>
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
 
     # Add logo to sidebar
     with st.sidebar:
@@ -459,8 +510,9 @@ def render_app():
             unsafe_allow_html=True
         )
     elif section == "Coding Tutorial":
-        st.header("Coding Tutorial")
-        st.markdown("Learn how to program your FTC robot using Python and other tools. (Add your content here!)")
+        # Import and show the comprehensive coding tutorial
+        from tutorials.coding import show_coding_tutorial
+        show_coding_tutorial()
     elif section == "CAD Tutorial":
         st.header("CAD Tutorial for FTC Robotics")
         
@@ -576,8 +628,9 @@ def render_app():
             """
         )
     elif section == "Rules":
-        st.header("FTC Rules")
-        st.markdown("Understand the official rules for FTC competitions. (Add your content here!)")
+        # Import and show the comprehensive rules guide
+        from rules import show_rules
+        show_rules()
     elif section == "Points System":
         st.header("Points System")
         st.markdown("Learn how the points system works in FTC Robotics competitions. (Add your content here!)")
