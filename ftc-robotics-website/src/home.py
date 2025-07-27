@@ -711,7 +711,7 @@ def render_app():
             """
             <div style='padding: 1rem 0;'>
                 <h3 style='color: #FF8310; margin-bottom: 1.5rem; font-size: 1.3rem; font-weight: 600;'>🤖 BotBuilders Hub</h3>
-                <p style='color: #ecf0f1; font-size: 1rem; line-height: 1.6; margin-bottom: 1rem;'>
+                <p style='color: #ffffff; font-size: 1rem; line-height: 1.6; margin-bottom: 1rem;'>
                     Empowering the next generation of robotics engineers through comprehensive FTC learning resources.
                 </p>
                 <p style='color: #bdc3c7; font-size: 0.9rem; font-style: italic;'>
@@ -728,10 +728,10 @@ def render_app():
             <div style='padding: 1rem 0;'>
                 <h4 style='color: #1D63A8; margin-bottom: 1.5rem; font-size: 1.2rem; font-weight: 600;'>Quick Links</h4>
                 <div style='display: flex; flex-direction: column; gap: 0.8rem;'>
-                    <p style='color: #ecf0f1; margin: 0; font-size: 1rem;'>• Tutorials</p>
-                    <p style='color: #ecf0f1; margin: 0; font-size: 1rem;'>• Competition Rules</p>
-                    <p style='color: #ecf0f1; margin: 0; font-size: 1rem;'>• Getting Started</p>
-                    <p style='color: #ecf0f1; margin: 0; font-size: 1rem;'>• Resources</p>
+                    <p style='color: #ffffff; margin: 0; font-size: 1rem;'>• Tutorials</p>
+                    <p style='color: #ffffff; margin: 0; font-size: 1rem;'>• Competition Rules</p>
+                    <p style='color: #ffffff; margin: 0; font-size: 1rem;'>• Getting Started</p>
+                    <p style='color: #ffffff; margin: 0; font-size: 1rem;'>• Resources</p>
                 </div>
             </div>
             """,
@@ -744,10 +744,10 @@ def render_app():
             <div style='padding: 1rem 0;'>
                 <h4 style='color: #1D63A8; margin-bottom: 1.5rem; font-size: 1.2rem; font-weight: 600;'>Follow Us</h4>
                 <div style='display: flex; flex-direction: column; gap: 0.8rem; margin-bottom: 1.5rem;'>
-                    <p style='color: #ecf0f1; margin: 0; font-size: 1rem;'>📷 Instagram</p>
-                    <p style='color: #ecf0f1; margin: 0; font-size: 1rem;'>📘 Facebook</p>
-                    <p style='color: #ecf0f1; margin: 0; font-size: 1rem;'>🐦 Twitter</p>
-                    <p style='color: #ecf0f1; margin: 0; font-size: 1rem;'>📺 YouTube</p>
+                    <p style='color: #ffffff; margin: 0; font-size: 1rem;'>📷 Instagram</p>
+                    <p style='color: #ffffff; margin: 0; font-size: 1rem;'>📘 Facebook</p>
+                    <p style='color: #ffffff; margin: 0; font-size: 1rem;'>🐦 Twitter</p>
+                    <p style='color: #ffffff; margin: 0; font-size: 1rem;'>📺 YouTube</p>
                 </div>
                 <p style='color: #bdc3c7; font-size: 0.9rem; font-style: italic;'>
                     Join our community of young robotics enthusiasts!
@@ -763,8 +763,8 @@ def render_app():
             <div style='padding: 1rem 0;'>
                 <h4 style='color: #1D63A8; margin-bottom: 1.5rem; font-size: 1.2rem; font-weight: 600;'>Contact Us</h4>
                 <div style='display: flex; flex-direction: column; gap: 0.8rem; margin-bottom: 1.5rem;'>
-                    <p style='color: #ecf0f1; margin: 0; font-size: 1rem;'>📧 hello@botbuildershub.com</p>
-                    <p style='color: #ecf0f1; margin: 0; font-size: 1rem;'>💬 Discord: BotBuilders Community</p>
+                    <p style='color: #ffffff; margin: 0; font-size: 1rem;'>📧 hello@botbuildershub.com</p>
+                    <p style='color: #ffffff; margin: 0; font-size: 1rem;'>💬 Discord: BotBuilders Community</p>
                 </div>
                 <p style='color: #bdc3c7; font-size: 0.9rem; font-style: italic;'>
                     Questions? We're here to help!
