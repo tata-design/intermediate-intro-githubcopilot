@@ -3,8 +3,6 @@ import streamlit as st
 def show_rules():
     """Display the comprehensive FTC Rules and Competition Guide"""
     
-    st.header("📜 FTC Robotics Competition Rules & Guidelines")
-    
     # Introduction section with modern styling
     st.markdown(
         """
@@ -242,18 +240,23 @@ def show_rules():
         <div style='background: linear-gradient(135deg, #1D63A8 0%, #0f4d8c 100%); 
                    padding: 2rem; border-radius: 15px; text-align: center; margin: 2rem 0;
                    box-shadow: 0 4px 15px rgba(29, 99, 168, 0.3);'>
-        <h3 style='color: white; margin-bottom: 1rem;'>Ready to Compete by the Rules? 🏆</h3>
+        <h3 style='color: white; margin-bottom: 1rem;'>Ready to Start Your Robotics Journey? 🤖</h3>
         <p style='color: white; font-size: 1.1rem; margin-bottom: 1.5rem;'>
-        Knowledge of the rules is your competitive advantage. Study them thoroughly, 
-        ask questions, and ensure your team is always competition-ready!
+        Join our community and get access to comprehensive tutorials, expert guidance, and start building amazing robots today!
         </p>
         <p style='color: #FF8310; font-weight: bold; font-size: 1.2rem;'>
-        Fair play wins more than just matches - it builds character! 🤝
+        Your next breakthrough is just one tutorial away! 💡
         </p>
         </div>
         """,
         unsafe_allow_html=True
     )
+    
+    # Add signup button
+    col1, col2, col3 = st.columns([1, 2, 1])
+    with col2:
+        if st.button("🚀 Join BotBuilders Hub", use_container_width=True, type="primary", key="rules_signup_btn"):
+            st.switch_page("pages/signup.py")
 
 # Allow the module to be run independently for testing
 if __name__ == "__main__":

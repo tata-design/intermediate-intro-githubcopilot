@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "defaultProfile": "production",
+  "profiles": {
+    "production": {
+      "app": {
+        "location": "eastus",
+        "name": "botbuilders-hub"
+      }
+    }
+  }
+}

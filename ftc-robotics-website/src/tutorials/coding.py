@@ -3,8 +3,6 @@ import streamlit as st
 def show_coding_tutorial():
     """Display the comprehensive coding tutorial for FTC Robotics"""
     
-    st.header("💻 Coding Tutorial for FTC Robotics")
-    
     # Introduction section
     st.markdown(
         """
@@ -403,18 +401,23 @@ if (red > green && red > blue) {
         <div style='background: linear-gradient(135deg, #1D63A8 0%, #0f4d8c 100%); 
                    padding: 2rem; border-radius: 15px; text-align: center; margin: 2rem 0;
                    box-shadow: 0 4px 15px rgba(29, 99, 168, 0.3);'>
-        <h3 style='color: white; margin-bottom: 1rem;'>Ready to Code Your Champion Robot? 🏆</h3>
+        <h3 style='color: white; margin-bottom: 1rem;'>Ready to Start Your Robotics Journey? 🤖</h3>
         <p style='color: white; font-size: 1.1rem; margin-bottom: 1.5rem;'>
-        Start with the basic examples above, then gradually build more complex functionality. 
-        Remember: every great programmer started with their first "Hello, Robot!" program.
+        Join our community and get access to comprehensive tutorials, expert guidance, and start building amazing robots today!
         </p>
         <p style='color: #FF8310; font-weight: bold; font-size: 1.2rem;'>
-        Happy Coding! Your robot is waiting for your creativity! 🚀
+        Your next breakthrough is just one tutorial away! �
         </p>
         </div>
         """,
         unsafe_allow_html=True
     )
+    
+    # Add signup button
+    col1, col2, col3 = st.columns([1, 2, 1])
+    with col2:
+        if st.button("🚀 Join BotBuilders Hub", use_container_width=True, type="primary", key="coding_signup_btn"):
+            st.switch_page("pages/signup.py")
 
 # This allows the module to be run independently for testing
 if __name__ == "__main__":

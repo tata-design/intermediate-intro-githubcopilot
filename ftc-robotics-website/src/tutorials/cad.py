@@ -2,8 +2,6 @@ import streamlit as st
 
 st.set_page_config(page_title="CAD Tutorial for FTC Robotics", page_icon="🤖", layout="centered")
 
-st.title("CAD Tutorial for FTC Robotics")
-
 st.markdown(
     """
     <div class='info-box'>
@@ -73,3 +71,28 @@ st.markdown(
     Explore these resources to enhance your CAD skills and improve your robot designs!
     """
 )
+
+# Call to action section
+st.markdown("---")
+st.markdown(
+    """
+    <div style='background: linear-gradient(135deg, #1D63A8 0%, #0f4d8c 100%); 
+               padding: 2rem; border-radius: 15px; text-align: center; margin: 2rem 0;
+               box-shadow: 0 4px 15px rgba(29, 99, 168, 0.3);'>
+    <h3 style='color: white; margin-bottom: 1rem;'>Ready to Start Your Robotics Journey? 🤖</h3>
+    <p style='color: white; font-size: 1.1rem; margin-bottom: 1.5rem;'>
+    Join our community and get access to comprehensive tutorials, expert guidance, and start building amazing robots today!
+    </p>
+    <p style='color: #FF8310; font-weight: bold; font-size: 1.2rem;'>
+    Your next breakthrough is just one tutorial away! 💡
+    </p>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+
+# Add signup button
+col1, col2, col3 = st.columns([1, 2, 1])
+with col2:
+    if st.button("🚀 Join BotBuilders Hub", use_container_width=True, type="primary", key="cad_signup_btn"):
+        st.switch_page("pages/signup.py")

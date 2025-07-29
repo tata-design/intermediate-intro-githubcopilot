@@ -47,32 +47,47 @@ def setup_ui():
             font-family: 'Segoe UI', 'Arial', sans-serif;
         }
         .nav-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
             display: flex;
             justify-content: center;
             align-items: center;
             gap: 36px;
             background: linear-gradient(90deg, #1a1a2e 0%, #16213e 100%);
             padding: 18px 0 10px 0;
-            border-radius: 0 0 18px 18px;
-            margin-bottom: 32px;
+            border-radius: 0;
+            margin: 0;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
             border-bottom: 3px solid #FF8310;
+            width: 100vw;
+            margin-left: -1rem;
+            height: 60px;
         }
         .nav-link {
             color: #e1e5f2 !important;
-            font-size: 1.1em;
-            font-weight: 600;
+            font-size: 1.4em;
+            font-weight: 700;
             text-decoration: none;
             padding: 6px 18px;
             border-radius: 8px;
             transition: background 0.2s, color 0.2s;
             letter-spacing: 0.5px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
         }
         .nav-link:hover {
             background: rgba(255, 131, 16, 0.2);
             color: #ffffff !important;
             text-decoration: none;
             box-shadow: 0 2px 8px rgba(255, 131, 16, 0.3);
+        }
+        
+        /* Add top padding to main content to account for fixed header */
+        .main .block-container {
+            padding-top: 4rem;
+            font-size: 1.1em;
         }
         .stButton > button {
             background: linear-gradient(90deg, #005f99 0%, #0077cc 100%);
@@ -340,8 +355,23 @@ def setup_ui():
     # Website header (no navigation links since sidebar handles navigation)
     st.markdown(
         """
-        <div class='nav-header'>
-            <span class='nav-link'>FTC Robotics Learning Platform</span>
+        <div style='
+            background: linear-gradient(90deg, #1a1a2e 0%, #16213e 100%);
+            padding: 8px 15px;
+            margin: -1rem -1rem 1rem -1rem;
+            border-bottom: 2px solid #FF8310;
+            border-radius: 0 0 10px 10px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        '>
+            <h3 style='
+                color: #e1e5f2;
+                font-size: 1.1em;
+                font-weight: 500;
+                margin: 0;
+                text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+                letter-spacing: 0.3px;
+            '>FTC Robotics Learning Platform</h3>
         </div>
         """,
         unsafe_allow_html=True
@@ -350,66 +380,6 @@ def setup_ui():
 def render_app():
     """Main application rendering logic"""
     
-    # Modern, exciting title with gradients and effects
-    st.markdown(
-        """
-        <div style='
-            background: white;
-            padding: 2.5rem 2rem;
-            margin: -1rem -2rem 3rem -2rem;
-            border-radius: 0 0 25px 25px;
-            border-bottom: 1px solid rgba(29, 99, 168, 0.1);
-            box-shadow: 0 4px 20px rgba(29, 99, 168, 0.08);
-            text-align: center;
-        '>
-            <h1 style='
-                background: linear-gradient(135deg, #1D63A8 0%, #FF8310 50%, #1D63A8 100%);
-                background-size: 200% 200%;
-                animation: gradient 3s ease infinite;
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                background-clip: text;
-                font-size: 3.5rem !important;
-                font-weight: 800 !important;
-                margin-bottom: 0.5rem !important;
-                text-shadow: 0 4px 8px rgba(29, 99, 168, 0.3);
-                letter-spacing: 2px;
-            '>
-                🤖 BotBuilders Hub
-            </h1>
-            <div style='
-                background: linear-gradient(90deg, #FF8310 0%, #1D63A8 100%);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                background-clip: text;
-                font-size: 1.8rem;
-                font-weight: 600;
-                margin-bottom: 1.5rem;
-                letter-spacing: 1px;
-            '>
-                FTC Robotics Tutorials & Learning Hub
-            </div>
-            <div style='
-                width: 120px;
-                height: 4px;
-                background: linear-gradient(90deg, #1D63A8 0%, #FF8310 50%, #1D63A8 100%);
-                margin: 0 auto;
-                border-radius: 2px;
-                box-shadow: 0 2px 8px rgba(255, 131, 16, 0.4);
-            '></div>
-        </div>
-        
-        <style>
-        @keyframes gradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        </style>
-        """,
-        unsafe_allow_html=True
-    )
-
     # Add logo and title to sidebar
     with st.sidebar:
         # BotBuilders Hub Logo
@@ -470,7 +440,8 @@ def render_app():
     # Sidebar navigation
     section = st.sidebar.radio(
         "",
-        ("🏠 Home", "💻 Coding Tutorial", "📐 CAD Tutorial", "🔨 Building Tutorial", "📋 Rules")
+        ("🏠 Home", "💻 Coding Tutorial", "📐 CAD Tutorial", "🔨 Building Tutorial", "📋 Rules"),
+        key="main_navigation"
     )
     
     # Add modern search bar at the bottom of sidebar
@@ -530,6 +501,66 @@ def render_app():
         )
 
     if section == "🏠 Home":
+        # Modern, exciting title with gradients and effects - ONLY for home page
+        st.markdown(
+            """
+            <div style='
+                background: white;
+                padding: 2.5rem 2rem;
+                margin: -1rem -2rem 3rem -2rem;
+                border-radius: 0 0 25px 25px;
+                border-bottom: 1px solid rgba(29, 99, 168, 0.1);
+                box-shadow: 0 4px 20px rgba(29, 99, 168, 0.08);
+                text-align: center;
+            '>
+                <h1 style='
+                    background: linear-gradient(135deg, #1D63A8 0%, #FF8310 50%, #1D63A8 100%);
+                    background-size: 200% 200%;
+                    animation: gradient 3s ease infinite;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    background-clip: text;
+                    font-size: 3.5rem !important;
+                    font-weight: 800 !important;
+                    margin-bottom: 0.5rem !important;
+                    text-shadow: 0 4px 8px rgba(29, 99, 168, 0.3);
+                    letter-spacing: 2px;
+                '>
+                    🤖 BotBuilders Hub
+                </h1>
+                <div style='
+                    background: linear-gradient(90deg, #FF8310 0%, #1D63A8 100%);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    background-clip: text;
+                    font-size: 1.8rem;
+                    font-weight: 600;
+                    margin-bottom: 1.5rem;
+                    letter-spacing: 1px;
+                '>
+                    FTC Robotics Tutorials & Learning Hub
+                </div>
+                <div style='
+                    width: 120px;
+                    height: 4px;
+                    background: linear-gradient(90deg, #1D63A8 0%, #FF8310 50%, #1D63A8 100%);
+                    margin: 0 auto;
+                    border-radius: 2px;
+                    box-shadow: 0 2px 8px rgba(255, 131, 16, 0.4);
+                '></div>
+            </div>
+            
+            <style>
+            @keyframes gradient {
+                0% { background-position: 0% 50%; }
+                50% { background-position: 100% 50%; }
+                100% { background-position: 0% 50%; }
+            }
+            </style>
+            """,
+            unsafe_allow_html=True
+        )
+        
         st.header("🎉 Welcome to BotBuilders Hub!")
         
         # Hero section with welcoming message
@@ -673,7 +704,7 @@ def render_app():
                        box-shadow: 0 4px 15px rgba(29, 99, 168, 0.3);'>
             <h3 style='color: white; margin-bottom: 1rem;'>Ready to Start Your Robotics Journey? 🤖</h3>
             <p style='color: white; font-size: 1.1rem; margin-bottom: 1.5rem;'>
-            Use the sidebar to explore our tutorials and start building amazing robots today!
+            Join our community and get access to comprehensive tutorials, expert guidance, and start building amazing robots today!
             </p>
             <p style='color: #FF8310; font-weight: bold; font-size: 1.2rem;'>
             Your next breakthrough is just one tutorial away! 💡
@@ -682,13 +713,17 @@ def render_app():
             """,
             unsafe_allow_html=True
         )
+        
+        # Add signup button
+        col1, col2, col3 = st.columns([1, 2, 1])
+        with col2:
+            if st.button("🚀 Join BotBuilders Hub", use_container_width=True, type="primary", key="home_signup_btn"):
+                st.switch_page("pages/signup.py")
     elif section == "💻 Coding Tutorial":
         # Import and show the comprehensive coding tutorial
         from tutorials.coding import show_coding_tutorial
         show_coding_tutorial()
     elif section == "📐 CAD Tutorial":
-        st.header("CAD Tutorial for FTC Robotics")
-        
         st.markdown(
             """
             <div style='background: linear-gradient(135deg, #e6f2ff 0%, #cce7ff 100%); 
@@ -747,8 +782,6 @@ def render_app():
             """
         )
     elif section == "🔨 Building Tutorial":
-        st.header("Building Your FTC Robot")
-        
         st.markdown(
             """
             <div style='background: linear-gradient(135deg, #e6f2ff 0%, #cce7ff 100%); 
@@ -949,9 +982,12 @@ if __name__ == "__main__":
     except Exception as e:
         st.error(f"An error occurred: {e}")
 else:
-    # When running through streamlit run command
-    original_stderr = suppress_streamlit_warnings()
-    configure_app()
-    restore_stderr(original_stderr)
-    setup_ui()
-    render_app()
+    # When running through app.py (imported)
+    try:
+        original_stderr = suppress_streamlit_warnings()
+        configure_app()
+        restore_stderr(original_stderr)
+        setup_ui()
+        render_app()
+    except Exception as e:
+        st.error(f"An error occurred: {e}")
